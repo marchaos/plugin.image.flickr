@@ -423,7 +423,7 @@ class FlickrSession:
 		sets = self.flickr.photosets_getList(user_id=userid)
 		info_list = []
 		for s in sets.find('photosets').findall('photoset'):
-			tn = "http://farm"+s.attrib.get('farm','')+".static.flickr.com/"+s.attrib.get('server','')+"/"+s.attrib.get('primary','')+"_"+s.attrib.get('secret','')+"_s.jpg"
+			tn = "http://farm"+s.attrib.get('farm','')+".static.flickr.com/"+s.attrib.get('server','')+"/"+s.attrib.get('primary','')+"_"+s.attrib.get('secret','')+"_q.jpg"
 			info_list.append({'title':s.find('title').text,'count':s.attrib.get('photos','0'),'id':s.attrib.get('id',''),'tn':tn})
 		return info_list
 
